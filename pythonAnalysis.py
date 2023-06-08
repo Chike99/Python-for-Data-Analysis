@@ -33,7 +33,7 @@ with open(file_path) as insurance_csv:
     regions = [str(item['region']) for item in insurance_file]
     insurance_charge = [float(item["charges"]) for item in insurance_file]
  
-#Let's create a function to find the average of the fields with numerical values
+#creating a function to find the average of the fields with numerical values
 def average_calculator(name, value):
     average =  sum(value) / len(value)
     print("The average {} is {}".format(name, average))
@@ -51,7 +51,7 @@ average_calculator( "bmi",  bmis)
 average_calculator( "charges",  insurance_charge)
 # The average charges is 13292.39
 
-#Let's find the number of Males and Females in this dataset
+#finding the number of Males and Females in this dataset
 males = []
 females = []
 for i in sexes:
@@ -64,14 +64,14 @@ print("There are " + str(len(males)) + " males in this dataset")
 print("There are " + str(len(females)) + " females in this dataset")
 # There are 671 males and 657 females in this dataset
 
-#let's find the maximum and minimum BMIs in the dataset
+#finding the maximum and minimum BMIs in the dataset
 max_bmi = max(bmis)
 print("The maximum BMI in this dataset is " + str(max_bmi))
 min_bmi = min(bmis)
 print("The minimum BMI in this dataset is " + str(min_bmi))
 #The maximum is 53.13 and minimum 15.96
 
-# let's calculate the total number of people representing each region
+# calculating the total number of people representing each region
 distinct_regions = set(regions)
 print(distinct_regions)
 #the code above shows that there are 4 distinct regions in the dataset
@@ -89,7 +89,16 @@ for i in regions:
     else :
         northeast.append(i)
         
-print( "There are", len(southwest), "people from southwest in this dataset") #324
-print( "There are", len(southeast), "people from southeast in this dataset") #360
-print("There are", len(northwest), "people from northwest in this dataset") #321
-print("There are", len(northeast), "people from northeast in this dataset") #323
+print( "There are", len(southwest), "people from southwest in this dataset") #324 people
+print( "There are", len(southeast), "people from southeast in this dataset") #360 people
+print("There are", len(northwest), "people from northwest in this dataset") #321 people
+print("There are", len(northeast), "people from northeast in this dataset") #323 people
+
+# finding the oldest and youngest individuals in the dataset
+oldest = max(ages)
+print("The oldest person in this dataset is " + str(oldest), "years old") #64
+youngest = min(ages)
+print("The oldest person in this dataset is " + str(youngest), "years old") #18
+
+
+
